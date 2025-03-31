@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/static/banner-bg.png'); /* Adjust the path as needed */
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #e6f7e9; /* Light green shade */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Center align content */
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        .result {
+            font-size: 24px;
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .result.success {
+            color: #155724; /* Dark green color */
+            background-color: #d4edda; /* Lighter green shade */
+        }
+        .result.error {
+            color: #ff0000;
+            background-color: #f2dede;
+        }
+        blockquote {
+            margin-top: 20px;
+            font-style: italic;
+            color: #555; /* Dark gray color */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Crop Suggestion</h1>
+    <hr>
+    {% if result %}
+        <div class="result success">
+            The most suitable crop is {{ result }}.
+        </div>
+    {% else %}
+        <div class="result error">
+            No prediction available.
+        </div><!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Crop Prediction Result</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: #f2f2f2;
+                    margin: 0;
+                    padding: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                }
+                .container {
+                    max-width: 600px;
+                    padding: 20px;
+                    background-color: #e6f7e9; /* Light green shade */
+                    border-radius: 10px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                    text-align: center; /* Center align content */
+                }
+                h1 {
+                    color: #4CAF50;
+                }
+                .result {
+                    font-size: 24px;
+                    margin-top: 20px;
+                    padding: 10px;
+                    border-radius: 5px;
+                }
+                .result.success {
+                    color: #155724; /* Dark green color */
+                    background-color: #d4edda; /* Lighter green shade */
+                }
+                .result.error {
+                    color: #ff0000;
+                    background-color: #f2dede;
+                }
+                blockquote {
+                    margin-top: 20px;
+                    font-style: italic;
+                    color: #555; /* Dark gray color */
+                }
+            </style>
+        </head>
+        <body>
+        
+        <div class="container">
+            <h1>Crop Suggestion</h1>
+            <hr>
+            {% if result %}
+                <div class="result success">
+                    The most suitable crop is {{ result }}.
+                </div>
+            {% else %}
+                <div class="result error">
+                    No prediction available.
+                </div>
+            {% endif %}
+            
+            <blockquote>
+                "Let us help you grow your future with the right crop choices!"
+            </blockquote>
+        </div>
+        
+        </body>
+        </html>
+        
+    {% endif %}
+    
+    
+    <p>Let us help you grow your future with the right crop choices!</p>
+</div>
+
+</body>
+</html>

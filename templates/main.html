@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Prediction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            background-image: url('/static/banner-bg.png');
+            /* Adjust the path as needed */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            padding-right: 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #4CAF50;
+            text-align: center;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        input[type="number"] {
+            width: 82%;
+            padding: 10px;
+            /* margin-bottom: 10px; */
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+
+
+        }
+
+        input[type="submit"] {
+            width: 50%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: #ddd;
+            margin-bottom: 20px;
+        }
+
+        .result {
+            font-size: 24px;
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .result.success {
+            color: #155724;
+            /* Dark green color */
+            background-color: #d4edda;
+            /* Lighter green shade */
+        }
+
+        .result.error {
+            color: #ff0000;
+            background-color: #f2dede;
+        }
+
+        blockquote {
+            margin-top: 20px;
+            font-style: italic;
+            color: #555;
+            /* Dark gray color */
+        }
+
+        .label-width {
+            width: 18% !important;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .main-div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .icon{
+            margin-right: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1><i class="fas fa-seedling icon"></i>GrowAgri - Crop Prediction</h1>
+        <hr>
+        <form action="{% url 'form_info' %}" method="GET">
+            <div class="main-div">
+                <div class="label-width">
+                    <label for="Nitrogen "><i class="fas fa-tint icon"></i>Nitrogen :</label>
+                </div>
+                <input type="number" name="Nitrogen" id="Nitrogen" placeholder="Enter Nitrogen in (mg/kg)" min="20"
+                    max="150" required>
+            </div>
+            <br>
+            <div class="main-div">
+                <div class="label-width">
+                    <label for="Phosphorus"><i class="fas fa-biohazard icon"></i>Phosphorus :</label>
+                </div>
+                <input type="number" name="Phosphorus" id="Phosphorus" placeholder="Enter Phosphorus in (mg/kg)"
+                    min="20" max="500" required><br>
+            </div> <br>
+            <div class="main-div">
+                <div class="label-width">
+                    <label for="Potassium"><i class="fas fa-flask icon"></i>Potassium :</label>
+                </div>
+                <input type="number" name="Potassium" id="Potassium" placeholder="Enter Potassium in (mg/kg)" min="20"
+                    max="200" required>
+            </div><br>
+            <div class="main-div">
+                <div class="label-width">
+                    <label for="temperature"><i class="fas fa-thermometer-half icon"></i>Temperature :</label>
+                </div>
+                <input type="number" name="temperature" id="temperature" placeholder="Enter Temperature in celsius"
+                    min="-20" max="50" required>
+            </div><br>
+            <div class="main-div">
+                <div class="label-width">
+                    <label for="humidity"><i class="fas fa-water icon"></i>Humidity :</label>
+                </div>
+                <input type="number" name="humidity" id="humidity" placeholder="Enter Humidity in %" min="40" max="75"
+                    required>
+            </div><br>
+            <div class="main-div">
+                <div class="label-width">
+                    <label for="pH_value"><i class="fas fa-balance-scale icon"></i>PH value :</label>
+                </div>
+                <input type="number" name="pH_value" id="pH_value" placeholder="Enter Ph Value between 0 to 14 " min="0"
+                    max="14" required>
+            </div><br>
+            <div class="main-div">
+                <div class="label-width">
+                    <label for="rainfall"><i class="fas fa-cloud-showers-heavy icon"></i>Rainfall :</label>
+                </div>
+                <input type="number" name="rainfall" id="rainfall" placeholder="Enter Rainfall in cm" min="200"
+                    max="2500" required>
+            </div><br>
+            <input type="submit" value="Predict">
+
+        </form>
+    </div>
+
+</body>
+
+</html>
